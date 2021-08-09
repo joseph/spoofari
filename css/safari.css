@@ -1,0 +1,118 @@
+:root {
+  --c-saf-bg: rgba(240, 240, 240, 0.8);
+  --c-saf-input-bg: rgba(224, 224, 224, 0.8);
+  --c-saf-fg: #000;
+  --c-saf-button: #007AFF;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: var(--c-saf-fg);
+  border-bottom: 0.5px solid #999;
+  z-index: 1;
+  -webkit-transform: translateZ(0);
+}
+
+header form {
+  display: block;
+  margin: 0;
+  padding: 8px;
+  position: relative;
+  background-color: var(--c-saf-bg);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  display: flex;
+}
+
+header input {
+  -webkit-appearance: none;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--c-saf-input-bg);
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  color: transparent;
+}
+
+header button {
+  -webkit-appearance: none;
+  background: none;
+  font-size: 1.7rem;
+  background: none;
+  border: none;
+}
+
+header input + button {
+  padding: 0 6px 0 10px;
+  display: none;
+  color: var(--c-saf-button);
+}
+
+header input:focus + button {
+  display: block;
+}
+
+header nav {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  font-size: 1.7rem;
+  pointer-events: none;
+}
+
+header nav button {
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  pointer-events: initial;
+  color: inherit;
+}
+
+header nav svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+header nav span svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  vertical-align: baseline;
+}
+
+header .icon-solid {
+  fill: currentcolor;
+}
+
+header .icon-hollow {
+  stroke: currentcolor;
+}
+
+header input:focus {
+  color: inherit;
+  outline: none;
+}
+
+header input:focus ~ nav {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-saf-fg: #FFF;
+    --c-saf-bg: rgba(46, 46, 46, 0.8);
+    --c-saf-input-bg: rgba(224, 224, 224, 0.25);
+  }
+}
